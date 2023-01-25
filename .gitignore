@@ -1,1 +1,6 @@
 /.metadata/
+*.SchDoc
+*.cproject
+*.project
+*.settings/
+**/__Previews/
