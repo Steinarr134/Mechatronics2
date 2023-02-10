@@ -11,6 +11,9 @@ int main(){
 	while (1)
 	{
 		PORTB = 1<<5 ;
+		asm("nop");
 		PORTB = 0;
+		asm("nop");
+		asm("nop");
 	}
 }
