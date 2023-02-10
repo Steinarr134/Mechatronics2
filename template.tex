@@ -1,0 +1,108 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\colorlet{mygray}{black!30}
+\colorlet{mygreen}{green!60!blue}
+\colorlet{mymauve}{red!60!blue}
+
+\lstset{
+  backgroundcolor=\color{gray!10},  
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  breakatwhitespace=false,      
+  breaklines=true,                
+  captionpos=b,                    
+  commentstyle=\color{mygreen}, 
+  extendedchars=true,              
+  frame=single,                   
+  keepspaces=true,             
+  keywordstyle=\color{blue},      
+  language=c++,                 
+  numbers=none,                
+  numbersep=5pt,                   
+  numberstyle=\tiny\color{blue}, 
+  rulecolor=\color{mygray},        
+  showspaces=false,               
+  showtabs=false,                 
+  stepnumber=5,                  
+  stringstyle=\color{mymauve},    
+  tabsize=3,                                     
+  title=\lstname 
+}
+
+
+\lstnewenvironment{code}[2][]{%
+  \lstset{%
+    numbers = left,
+    title   = #2,
+    #1,
+  }%
+}{}
+
+\title{Homework 1}
+\author{Steinarr Hrafn Höskuldsson}
+
+\newcommand{\mycomment}[1]{}
+\usepackage{fancyhdr}
+\fancypagestyle{firststyle}
+{
+   \fancyhf{}
+   \fancyhead[L]{Mechatronics 2}
+   
+   \renewcommand{\headrulewidth}{0pt} % removes horizontal header line
+}
+\begin{document}
+
+\mycomment{
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{LAB3/Basic1.png}
+    \caption{"Switch test" Breadboard set up}
+    \label{fig:Switch_test}
+\end{figure}
+
+\lstinputlisting[caption=Defining 'ColorMatch' state, label={lst:colormatch}, language=Python, firstline=44, lastline=52]{LAB3/Basic.py}
+
+} % end of comment
+
+\pagestyle{firststyle}
+{\let\newpage\relax\maketitle}
+
+\section*{Final Project}
+
+This week I researched options for sensors.
+\begin{itemize}
+    \item  For hand sensors (sensing when the hand strikes the thigh) my main 2 options are Piezo Contact Microphones and Accelerometers.
+
+\item For the right foot sensor I am considering using an accelerometer mounted on the toe of the shoe, I theorize that it should experience a spike in acceleration when the foot strikes the ground.
+
+\item For the left foot sensor I am also considering using an accelerometer. The left foot needs to sense the actual position of the foot since that constrols the sound from the HiHats. 
+
+\end{itemize}
+Next week I intend to source some simple accelerometers with analog outputs and some piexo contact microphones and test them out, try to measure the signal to noise ratio.
+
+\newpage
+\appendix
+\section{Code}\label{appendix:code}
+
+\lstinputlisting[firstline=25, caption=Arduino IDE version of blink program]{HW1/Blink/Blink.ino.ino}
+
+
+
+\end{document}
+
